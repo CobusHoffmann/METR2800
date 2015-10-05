@@ -61,6 +61,7 @@ void initADC(){
 		//Disable Digital input on ADC0
 		DIDR0 = (1<<ADC0D);
 
+
 }
 
 int analogRead(){
