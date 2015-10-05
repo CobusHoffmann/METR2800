@@ -16,7 +16,7 @@
  */
 #include "end_effector.h"
 
-volatile int analogVal;			//analog value
+volatile int analogVal=1;			//analog value
 volatile bool convertStatus=0;	//0 for not converting 1 for converting
 
 void initEF(){
@@ -36,10 +36,20 @@ void initEF(){
 }
 
 void turnOnEM(){
+	PORTC |=(1<<PORTC1);
 
 }
 void turnOffEM(){
+	PORTC &= ~(1<<PORTC1);
 
+}
+
+void turnOnIR(){
+	PORTC |=(1<<PORTC2);
+	
+}
+void turnOffIR(){
+	PORTC &= ~(1<<PORTC2);
 }
 void initADC(){
 	/************************************************************************/
@@ -83,5 +93,6 @@ ISR(ADC_vect){
 	 */
 	analogVal = ADC;
 }
+
 
 
