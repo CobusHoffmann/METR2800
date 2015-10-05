@@ -115,6 +115,12 @@
     <Compile Include="end_effector.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="motors.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="motors.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Pick-n-place.c">
       <SubType>compile</SubType>
     </Compile>
