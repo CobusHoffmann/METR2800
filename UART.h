@@ -2,7 +2,7 @@
  * UART.h
  *
  *  Created on: 4 Oct 2015
- *      Author: Cobus
+ *      Author: Cobus Hoffmann
  */
 
 #ifndef UART_H_
