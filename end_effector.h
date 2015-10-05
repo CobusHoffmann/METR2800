@@ -17,15 +17,19 @@
 #ifndef END_EFFECTOR_H_
 #define END_EFFECTOR_H_
 
+#define EM PORTC1
+#define IR PORTC2
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdbool.h>
+
 
 void initEF();
 void turnOnEM();
 void turnOffEM();
 void turnOnIR();
-void turnOfIR();
+void turnOffIR();
 void initADC();
 void startADC0();
 int analogRead();

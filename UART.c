@@ -32,15 +32,16 @@ void printStr(unsigned char charArray[]){
 	 * over serial
 	 */
 
-	for(uint8_t i=0; i<sizeof(charArray); i++){
+	for(uint8_t i=0; i<(sizeof(charArray)+1); i++){
 
 		if(charArray[i]){
 			//Transmit each character individually
 			transmitUART(charArray[i]);
 		}else{
 			//Send new line charicter and exit for loop
-			//transmitUART('\n');
+			transmitUART('\n');
 			break;
+			
 
 		}
 	}
