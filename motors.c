@@ -6,8 +6,6 @@
  */ 
 
 #include "motors.h"
-
-
 void initMotors(){
 	/************************************************************************/
 	/* Using 8 bit Timer to run the motors, chosen frequency of 400Hz (400pps),
@@ -62,9 +60,14 @@ void move(uint8_t state_flag){
 		case 4:
 		PORTB = (1<<PORTB1)|(1<<PORTB4); //state_4
 		break;
+	}
+
 }
 
+
 ISR(TIMER0_COMPA_vect){
+	
+	{
 	/************************************************************************/
 	/* This ISR will increment decrement or keep the state variable constant,
 	   this will alow the move() function to not skip any steps.                                                                      */
@@ -80,7 +83,7 @@ ISR(TIMER0_COMPA_vect){
 		}else{
 			state = 1;
 		}
-		break;
+			break;
 		
 		case REVERSE:
 		//Decrement the state variable
@@ -90,15 +93,16 @@ ISR(TIMER0_COMPA_vect){
 			}else{
 			state = 4;
 		}
-		break;
+			break;
 		
 		case STOP:
 		//Do nothing
-		break;
+			break;
 		
 	}
 	
 	move(state);
 	sei();	//set the interupt flag again 
-	
 }
+}
+

@@ -28,7 +28,7 @@ int main(void){
 	initUART(MYUBRR);
 	initEF();		//Initialize the end effector
 	sei();
-	initTimer0();
+	
 	
 	printStr(analogString);
 	startADC0();	//Start conversion
@@ -46,13 +46,4 @@ int main(void){
 
 }
 
-void initTimer0(){
-		
-}
-
-ISR(TIMER0_COMPA_vect){
-	//This service routine is run when Timer0 gets 40 ticks
-	PORTC^=(1<<PORTC1);
-	
-}
 
