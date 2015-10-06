@@ -4,6 +4,8 @@
 
 end_effector.c
 
+motors.c
+
 Pick-n-place.c
 
 UART.c

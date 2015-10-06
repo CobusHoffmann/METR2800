@@ -47,19 +47,7 @@ int main(void){
 }
 
 void initTimer0(){
-	//Timers 8bit timer/counter0 must be initiated after sei()
-	
-	//Set CTC mode
-	TCCR0A = (1<<WGM01);
-	
-	//number of ticks for 400Hz frequency
-	OCR0A = 20;
-	
-	//Set the interrupt
-	TIMSK0 = (1<<OCIE0A);
-	
-	//Set pre-scaler 1024, starts the timer
-	TCCR0B =(1<<CS02)|(1<<CS00);	
+		
 }
 
 ISR(TIMER0_COMPA_vect){

@@ -38,6 +38,7 @@ SUBDIRS :=
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../end_effector.c \
+../motors.c \
 ../Pick-n-place.c \
 ../UART.c
 
@@ -50,21 +51,25 @@ ASM_SRCS +=
 
 OBJS +=  \
 end_effector.o \
+motors.o \
 Pick-n-place.o \
 UART.o
 
 OBJS_AS_ARGS +=  \
 end_effector.o \
+motors.o \
 Pick-n-place.o \
 UART.o
 
 C_DEPS +=  \
 end_effector.d \
+motors.d \
 Pick-n-place.d \
 UART.d
 
 C_DEPS_AS_ARGS +=  \
 end_effector.d \
+motors.d \
 Pick-n-place.d \
 UART.d
 
@@ -82,6 +87,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
